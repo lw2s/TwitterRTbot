@@ -21,5 +21,5 @@ client.home_timeline(count: 200, include_rts: false).each do |timeline|
     #client.update(timeline.text)
   end
 end
-sleep(90)
+sleep(60)
 end
