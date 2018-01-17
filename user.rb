@@ -1,5 +1,4 @@
 require "twitter"
-require 'pp'
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key           = "yx8eFVXTRW7BDc2vsLY4vKpV7"
@@ -9,17 +8,17 @@ client = Twitter::REST::Client.new do |config|
 end
 
 loop do
-client.home_timeline(include_rts: false).each do |timeline|
-  #a = []
+client.home_timeline(count: 200, include_rts: false).each do |timeline|
+  a = []
   
-  #if (a.include?(timeline.id))
-  #  next
-  #end
-  #a << (timeline.id)
+  if (a.include?(timeline.id))
+    next
+  end
+  a << (timeline.id)
   
-  if (/^(.*#デレステ.*)$/) =~ timeline.text
-    client.retweet(timeline.id) rescue nil
-    #client.update(timeline.text)
+  if (/^(.*a.*)$/) =~ timeline.text
+    #client.retweet(timeline.id) rescue nil
+    client.update(timeline.text)
   end
 end
 sleep(90)
