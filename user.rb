@@ -17,8 +17,8 @@ client.home_timeline(count: 200, include_rts: false).each do |timeline|
   a << (timeline.id)
   
   if (/^(.*a.*)$/) =~ timeline.text
-    #client.retweet(timeline.id) rescue nil
-    client.update(timeline.text)
+    client.retweet(timeline.id) rescue nil
+    #client.update(timeline.text)
   end
 end
 sleep(90)
