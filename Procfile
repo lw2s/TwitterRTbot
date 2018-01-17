@@ -1,1 +1,1 @@
-bot: bundle exec ruby twitter.rb
+bot: bundle exec ruby user.rb
