@@ -9,6 +9,7 @@ end
 
 loop do
 client.home_timeline(count: 200, include_rts: false).each do |timeline|
+  # timeline.idを格納する配列
   tl_id = []
 
   # 配列にすでにあるtimeline.idがあれば次へなければtl_idに格納
