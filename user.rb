@@ -13,7 +13,7 @@ client.home_timeline(count: 200, include_rts: false).each do |timeline|
   tl_id = []
 
   # 配列にすでにあるtimeline.idがあれば次へなければtl_idに格納
-  if (tl_id.inあるclude?(timeline.id))
+  if (tl_id.include?(timeline.id))
     next
   end
   tl_id << (timeline.id)
